@@ -5,22 +5,23 @@ class Solution(object):
         :type t: str
         :rtype: bool
         """
-        d = {}
-        for i in s:
-            if i in d.keys():
-                d[i] += 1
+        hashmap = {}
+        for char in s:
+            if char in hashmap.keys():
+                hashmap[char] += 1
             else:
-                d[i] = 1
-        
-        for i in t:
-            if i in d.keys():
-                if d[i] == 1:
-                    del d[i]
+                hashmap[char] = 1
+
+        for char in t:
+            if char in hashmap.keys():
+                if hashmap[char] == 1:
+                    del hashmap[char]
                 else:
-                    d[i] -= 1
+                    hashmap[char] -= 1
             else:
                 return False
-        return len(d) == 0:
+        return len(hashmap) == 0
+
 
 # we will create one hashmap
 # create letter as key and no of time that letter appears as a value
