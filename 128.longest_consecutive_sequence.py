@@ -14,8 +14,7 @@ class Solution(object):
             if current == i - 1:
                 seq_len += 1
             else:
-                if seq_len > max_len:
-                    max_len = seq_len
+                max_len = max(seq_len, max_len)
                 seq_len = 1
             current = i
         return max(max_len, seq_len)

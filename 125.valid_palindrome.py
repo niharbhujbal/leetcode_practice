@@ -20,7 +20,8 @@ class Solution(object):
 
         return True
 
+
 # create two pointers left and right
 # start while loop untile left < right
-# andkeep checking if the pointers don't match , if they don't then its not a palindrome
+# and keep checking if the pointers don't match , if they don't then its not a palindrome
 # else it is
