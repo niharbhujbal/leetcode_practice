@@ -1,4 +1,6 @@
 import collections
+
+
 class Solution(object):
     def checkInclusion(self, s1, s2):
         """
@@ -30,7 +32,6 @@ class Solution(object):
                 right += 1
         return False
 
-                    
 
 # set the size of window to size of the first string
 # create hash map of both s1 and window of s2
