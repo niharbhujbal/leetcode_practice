@@ -15,11 +15,7 @@ class Solution(object):
         """
         if root is None:
             return False
-        if (
-            self.isSameTree(root.left, subRoot)
-            or self.isSameTree(root.right, subRoot)
-            or self.isSameTree(root, subRoot)
-        ):
+        if root.val == subRoot.val and self.isSameTree(root, subRoot):
             return True
         else:
             left_val = self.isSubtree(root.left, subRoot)
@@ -42,3 +38,10 @@ class Solution(object):
             and self.isSameTree(p.left, q.left)
             and self.isSameTree(p.right, q.right)
         )
+
+
+# we will check with issame tree function if trees are same are not
+# for the sub tree part
+# first if the root is none then just return none
+# if the root node and subtree node match then run is same algo
+# otherwise go ahead and run same algo on left and right of tree

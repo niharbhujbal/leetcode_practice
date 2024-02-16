@@ -9,14 +9,17 @@ class Solution(object):
     def calculate_height_of_node(self, root):
         if root is None:
             return True, -1
+
         if root.left is not None:
             is_balanced_left, left_height = self.calculate_height_of_node(root.left)
         else:
             is_balanced_left, left_height = True, 0
+
         if root.right is not None:
             is_balanced_right, right_height = self.calculate_height_of_node(root.right)
         else:
             is_balanced_right, right_height = True, 0
+
         return (
             abs(left_height - right_height) <= 1
             and is_balanced_right

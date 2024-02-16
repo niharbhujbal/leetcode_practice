@@ -1,4 +1,7 @@
 # Definition for singly-linked list.
+import heapq
+
+
 class ListNode(object):
     def __init__(self, val=0, next=None):
         self.val = val
@@ -11,25 +14,51 @@ class Solution(object):
         :type lists: List[ListNode]
         :rtype: ListNode
         """
-        merged_list = ListNode(-1)
-        p1 = merged_list
-        min_value_index = self.find_min_value_list(lists)
-        while min_value_index is not None:
-            p1.next = lists[min_value_index]
-            p1 = p1.next
-            lists[min_value_index] = lists[min_value_index].next
-            min_value_index = self.find_min_value_list(lists)
-        return merged_list.next
 
-    def find_min_value_list(self, lists):
-        min_value_index = None
-        min_val = None
-        for ind, list_ in enumerate(lists):
-            if list_ is not None:
-                if min_value_index is None or list_.val < min_val:
-                    min_val = list_.val
-                    min_value_index = ind
-        return min_value_index
+        heap = []
+        for i in lists:
+            if i is not None:
+                heapq.heappush(heap, (i.val, i))
+
+        prehead = ListNode(-1)
+        head = prehead
+        while len(heap) > 0:
+            _, l = heapq.heappop(heap)
+            if l.val is not None:
+                head.next = l
+                head = head.next
+                l = l.next
+                if l is not None:
+                    heapq.heappush(heap, (l.val, l))
+
+        return prehead.next
+
+    # create a heap with value and linkedlist in the heap
+    # first add all the list in the heap
+    # the run a while loop until heap is empty
+    # pop the smallest value from head add it to answer and add that next value of that list into heap again
+    # at the end return new linkedlist
+
+    #     merged_list = ListNode(-1)
+    #     p1 = merged_list
+    #     min_value_index = self.find_min_value_list(lists)
+    #     while min_value_index is not None:
+    #         p1.next = lists[min_value_index]
+    #         p1 = p1.next
+    #         lists[min_value_index] = lists[min_value_index].next
+    #         min_value_index = self.find_min_value_list(lists)
+    #     return merged_list.next
+
+    # def find_min_value_list(self,lists):
+
+    #     min_value_index = None
+    #     min_val = None
+    #     for ind, list_ in enumerate(lists):
+    #         if list_ is not None:
+    #             if  min_value_index is None or list_.val < min_val:
+    #                 min_val = list_.val
+    #                 min_value_index = ind
+    # return min_value_index
 
 
 # start a merged_list with a node -1 value

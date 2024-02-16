@@ -32,4 +32,5 @@ class Solution(object):
 
         return merged_list.next
 
+
 # store all the values in the list and iterate over the values n that order
