@@ -23,7 +23,7 @@ class Solution(object):
 # intialise an stack
 # create a ans array of length temprature with zeros
 # check the stack if empty then push the elemnt with its index to stack
-# the move to next element peak the top elemet of the tsack if the element of on top is smaller than stack
+# then move to next element peak the top elemet of the stack, if the element of on top is smaller than stack
 # then subtract the differene of element and top index and store it to index of top element
 # then pop the top element and put the element in
 # we should keep poping the elements until we get an element greater than the element

@@ -4,6 +4,31 @@ class Solution(object):
         :type heights: List[int]
         :rtype: List[int]
         """
+        stack = []
+
+        for i, h in enumerate(heights):
+            if len(stack) == 0:
+                pass
+            else:
+                while heights[stack[-1]] <= h:
+                    stack.pop()
+                    if len(stack) == 0:
+                        break
+            stack.append(i)
+
+        return stack
+
+
+# we have to create a montonic decreasing stack
+# so that we will know which building can see over other buildings
+
+
+class Solution(object):
+    def findBuildings(self, heights):
+        """
+        :type heights: List[int]
+        :rtype: List[int]
+        """
         max_height = 0
         building_with_views = []
         index = len(heights)

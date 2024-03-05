@@ -22,7 +22,7 @@ class Solution(object):
         return max_area
 
 
-# we want to uase monotonic increasing stack
+# we want to use monotonic increasing stack
 # we keep add the value of index and height at the index to stack
 # while adding compare element to top of stack add if current is larger
 # if the current is smaler than top then keep poping from stack and calculate the area by sbtracting current index and that element index

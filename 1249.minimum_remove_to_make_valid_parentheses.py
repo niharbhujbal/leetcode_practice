@@ -26,4 +26,4 @@ class Solution(object):
 
 # here the idea is to push (  into stack
 # when ) appears pop ( from stack if the stack is empty then we should remove that )
-# after the loop if there are any ) in the stack then we should remove those too
+# after the loop if there are any ( in the stack then we should remove those too
