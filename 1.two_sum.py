@@ -16,6 +16,6 @@ class Solution(object):
 
 # create a hashmap
 # loop over the array
-# get the element oand its index
+# get the element and its index
 # computer the complimnet ie target - the value
 # if the compliment is in hashmap then retun indexes else add the element to hashmap

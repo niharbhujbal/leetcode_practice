@@ -4,6 +4,32 @@ class Solution(object):
         :type root: TreeNode
         :rtype: bool
         """
+        is_balanced = True
+
+        def dfs(root):
+            if root is None:
+                return 0
+
+            left_height = dfs(root.left)
+            right_height = dfs(root.right)
+
+            nonlocal is_balanced
+            if abs(left_height - right_height) > 1:
+                is_balanced = False
+
+            return 1 + max(left_height, right_height)
+
+        dfs(root)
+
+        return is_balanced
+
+
+class Solution(object):
+    def isBalanced(self, root):
+        """
+        :type root: TreeNode
+        :rtype: bool
+        """
         return self.calculate_height_of_node(root)[0]
 
     def calculate_height_of_node(self, root):

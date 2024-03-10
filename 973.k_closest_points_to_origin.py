@@ -1,4 +1,23 @@
-import collections
+import collections, math, heapq
+
+
+class Solution(object):
+    def kClosest(self, points, k):
+        """
+        :type points: List[List[int]]
+        :type k: int
+        :rtype: List[List[int]]
+        """
+        heap = []
+        for x, y in points:
+            dist = math.sqrt(x**2 + y**2)
+            heapq.heappush(heap, (dist, (x, y)))
+
+        ans = []
+        for i in range(k):
+            ans.append(heapq.heappop(heap)[1])
+
+        return ans
 
 
 class Solution(object):

@@ -28,5 +28,5 @@ class Solution(object):
 
 # create a monotonic stack of time it takes to reach to target
 # upend the time if stack is empty
-# elese comre the element at the top keep removing the element if the element is smaller or equal to time and at the end append the element
+# else compare the element at the top keep removing the element if the element is smaller or equal to time and at the end append the element
 # repeat the process and you will have all the fleets in the stack at the end so we just need how many fleets were there

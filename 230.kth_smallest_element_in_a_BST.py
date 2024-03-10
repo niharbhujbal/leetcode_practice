@@ -1,3 +1,23 @@
+class Solution(object):
+    def kthSmallest(self, root, k):
+        """
+        :type root: TreeNode
+        :type k: int
+        :rtype: int
+        """
+        ans = []
+
+        def dfs(root):
+            if root is None or len(ans) > k:
+                return
+            dfs(root.left)
+            ans.append(root.val)
+            dfs(root.right)
+
+        dfs(root)
+        return ans[k - 1]
+
+
 # Definition for a binary tree node.
 # class TreeNode(object):
 #     def __init__(self, val=0, left=None, right=None):
