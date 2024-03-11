@@ -8,9 +8,7 @@ class Solution(object):
         while h < t:
             if s[h] != s[t]:  # delete s[h] or s[t] and validate palindrome finally
                 return (
-                    s[h : t + 1] == s[h : t + 1][::-1]
-                    or s[h + 1 : t + 1] == s[h + 1 : t + 1][::-1]
-                    or s[h:t] == s[h:t][::-1]
+                    s[h + 1 : t + 1] == s[h + 1 : t + 1][::-1] or s[h:t] == s[h:t][::-1]
                 )
             h, t = h + 1, t - 1
         return True

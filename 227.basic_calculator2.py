@@ -27,8 +27,9 @@ class Solution(object):
 
         return sum(st)
 
+
 # we create a stack and keep pushing the no with its sign
-    # when we encounter a multiplication or div sign just pop no from the stack
-    # do the operation and push it to stack
-    # we have to add + at the end so the last no is psuhed to stack
-    # at the end we just take the sume of no
+# when we encounter a multiplication or div sign just pop no from the stack
+# do the operation and push it to stack
+# we have to add + at the end so the last no is psuhed to stack
+# at the end we just take the sume of no

@@ -2,9 +2,8 @@ from collections import defaultdict
 
 
 class Solution:
-    def groupStrings(self, strings: List[str]) -> List[List[str]]:
+    def groupStrings(self, strings):
         storage = defaultdict(list)
-        print((ord("a") - ord("z")) % 26)
 
         for s in strings:
             key = []
