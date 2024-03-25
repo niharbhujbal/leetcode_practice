@@ -20,18 +20,12 @@ class Solution(object):
         reversal = False
         for r in range(len(mat)):
             get_diag(r, 0, [], reversal)
-            if reversal:
-                reversal = False
-            else:
-                reversal = True
+            reversal = not reversal
 
         # horizontal
         for c in range(1, len(mat[0])):
             get_diag(len(mat) - 1, c, [], reversal)
-            if reversal:
-                reversal = False
-            else:
-                reversal = True
+            reversal = not reversal
 
         return ans
 
