@@ -1,4 +1,9 @@
 class Solution:
     def missingNumber(self, nums: List[int]) -> int:
-        missing_numer = set(range(0,len(nums)+1)) - set(nums)
-        return list(missing_numer)[0]
+        # sum of first 1 to n
+        n = len(nums)
+        sum_n = n * (n + 1) // 2
+        sum_nums = sum(nums)
+
+        # only remaining number will be number which is not present
+        return sum_n - sum_nums
