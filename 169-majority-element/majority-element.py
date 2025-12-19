@@ -1,10 +1,18 @@
 class Solution:
     def majorityElement(self, nums: List[int]) -> int:
-        counter = defaultdict(int)
-        majority_count = len(nums) // 2
-        for element in nums:
-            counter[element] += 1
-            if counter[element] > majority_count:
-                return element
+        # moore's algo
+        change_ele = True
+        for i in nums:
+            if change_ele:
+                ele = i
+                count = 1
+                change_ele = False
+                continue
+            if i == ele:
+                count += 1
+            else:
+                count -= 1
+            if count == 0:
+                change_ele = True
         
-        return 0
+        return ele
