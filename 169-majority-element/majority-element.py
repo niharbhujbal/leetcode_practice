@@ -7,4 +7,4 @@ class Solution:
             if counter[element] > majority_count:
                 return element
         
-        return element
+        return 0
