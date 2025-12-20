@@ -5,39 +5,19 @@ class Solution:
         """
         m = len(matrix)
         n = len(matrix[0])
-        zeros = []
+        zero_rows = set()
+        zero_cols = set()
         for row_ind, row in enumerate(matrix):
             for col_ind, ele in enumerate(row):
                 if matrix[row_ind][col_ind] == 0:
-                    zeros.append((row_ind,col_ind))
+                    zero_rows.add(row_ind)
+                    zero_cols.add(col_ind)
         
-        for row_ind, col_ind in zeros:
-            # up
-            zr = row_ind
-            zc = col_ind
-            while zr >=0:
-                matrix[zr][zc] = 0
-                zr -= 1
-            
-            # down
-            zr = row_ind
-            zc = col_ind
-            while zr < m:
-                matrix[zr][zc] = 0
-                zr += 1
+        for row_ind, row in enumerate(matrix):
+            for col_ind, ele in enumerate(row):
+                if row_ind in zero_rows or col_ind in zero_cols:
+                    matrix[row_ind][col_ind] = 0
 
-            # left
-            zr = row_ind
-            zc = col_ind
-            while zc >= 0:
-                matrix[zr][zc] = 0
-                zc -= 1
-            # right
-            zr = row_ind
-            zc = col_ind
-            while zc < n:
-                matrix[zr][zc] = 0
-                zc += 1
 
             
                 
