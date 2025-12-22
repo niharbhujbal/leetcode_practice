@@ -1,7 +1,7 @@
 class Solution:
     def searchRange(self, nums: List[int], target: int) -> List[int]:
+        # find the floor
         first = -1
-        last = -1
         left = 0
         right = len(nums) - 1
         while left <= right:
@@ -12,6 +12,9 @@ class Solution:
                 right = mid - 1
             else:
                 left = mid + 1
+        
+        # find ceil
+        last = -1
         left = 0
         right = len(nums) - 1
         while left <= right:
