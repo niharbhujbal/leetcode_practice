@@ -4,7 +4,7 @@ class Solution:
         # koko_hours = sum([math.ceil(float(i) / k) for i in piles])
         # binary search for h
         left = 1
-        right = max(piles)
+        right = max(max(piles),h)
         k = -1
         while left <= right:
             mid = left + (right - left) // 2
