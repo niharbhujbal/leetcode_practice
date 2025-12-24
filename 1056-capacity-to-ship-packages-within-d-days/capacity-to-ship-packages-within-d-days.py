@@ -15,14 +15,9 @@ class Solution:
                     cargo = i
             return days
         
-        # get max of weight
-        left = 0
-        # get sum of weights
-        right = 0
-        for i in weights:
-            left = max(i,left)
-            right += i
-            
+        left = max(weights)
+        right = sum(weights)
+
         ans = -1
         while left <= right:
             mid = left + (right - left) // 2
