@@ -9,16 +9,12 @@ class Solution:
             return head
         if head.next is None:
             return head
-        
-        prev = None
-        curr = head
+        def reverse_ll(prev,head,next_):
+            head.next = prev
+            if next_ is None:
+                return head
+            else:
+                return reverse_ll(head,next_,next_.next)
+        return reverse_ll(None,head,head.next)
 
-        while curr.next is not None :
-            nex = curr.next
-            curr.next = prev
-            prev = curr
-            curr = nex
-            nex = curr.next
-        curr.next = prev
-        return curr
             
