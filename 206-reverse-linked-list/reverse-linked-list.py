@@ -7,8 +7,7 @@ class Solution:
     def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
         if head is None:
             return head
-        if head.next is None:
-            return head
+            
         def reverse_ll(prev,head,next_):
             head.next = prev
             if next_ is None:
