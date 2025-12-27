@@ -18,7 +18,6 @@ class Solution:
         
         # then run is digit function and keep adding to number
         value = 0
-        numbers = []
         while ind < len(s) and s[ind].isdigit():
             value = value * 10 + int(s[ind])
             ind += 1
