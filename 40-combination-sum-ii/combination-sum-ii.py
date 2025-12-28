@@ -23,4 +23,4 @@ class Solution:
                 backtrace(new_ind, sum_, res)
         
         backtrace(0,0,[])
-        return list(ans)
+        return ans
