@@ -7,7 +7,7 @@ class Solution:
         next_less_or_equal_index = [n] * n
 
         # Pass 1: previous strictly less (<)
-        increasing_stack: List[int] = []
+        increasing_stack = deque()
         for i in range(n):
             while increasing_stack and arr[increasing_stack[-1]] >= arr[i]:
                 increasing_stack.pop()
@@ -15,7 +15,7 @@ class Solution:
             increasing_stack.append(i)
 
         # Pass 2: next less-or-equal (<=), scan from right
-        increasing_stack.clear()
+        increasing_stack = deque()
         for i in range(n - 1, -1, -1):
             while increasing_stack and arr[increasing_stack[-1]] > arr[i]:
                 increasing_stack.pop()
