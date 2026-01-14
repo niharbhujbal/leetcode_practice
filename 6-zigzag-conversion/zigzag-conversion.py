@@ -3,7 +3,7 @@ class Solution:
     def convert(self, s: str, numRows: int) -> str:
         if numRows == 1:
             return s
-        hashmap = defaultdict(list)
+        ans = [""] * numRows
         i = 0
         # down - True
         # up - False
@@ -15,12 +15,10 @@ class Solution:
             if i >= numRows:
                 dire = False
                 i -= 2
-            hashmap[i].append(char)
+            ans[i] += char
             if dire:
                 i += 1
             else:
                 i -= 1
-        ans = []
-        for i in range(numRows):
-            ans.extend(hashmap[i])
+
         return "".join(ans)
